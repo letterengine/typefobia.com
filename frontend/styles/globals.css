@@ -10,13 +10,14 @@
 * {
     box-sizing: border-box;
     text-align: center;
+    font-family: 'Comic Neue', sans-serif;
 }
 
 html,
 body {
-    font-family: 'Comic Neue', fantasy;
     color: var(--text);
     background-color: var(--bg);
+    font-family: 'Comic Neue', sans-serif;
 }
 
 body {
@@ -60,6 +61,7 @@ strong {
 }
 
 a {
+    color: var(--text);
     text-decoration: underline;
 }
 
@@ -77,5 +79,10 @@ a {
     body {
         color: var(--text-dark);
         background-color: var(--bg-dark);
+    }
+
+    a {
+        color: var(--text-dark);
+        text-decoration: underline;
     }
 }
