@@ -1,18 +1,21 @@
 {
-  "name": "typefobia",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "eslint": "8.28.0",
-    "eslint-config-next": "13.0.5",
-    "next": "13.0.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+    "name": "typefobia",
+    "homepage": ".",
+    "description": "Espacio anti académico cuyo objetivo es generar un pensamiento de contra cultura donde lo importante no es aprender si no valorar a las personas y lo ya aprendido.",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@next/font": "^13.0.6",
+        "eslint": "8.28.0",
+        "eslint-config-next": "13.0.5",
+        "next": "^13.0.6",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    }
 }
