@@ -66,7 +66,7 @@ a {
 }
 
 @media (hover) {
-    a:hover  {
+    a:hover {
         font-weight: 700;
     }
 }
@@ -83,6 +83,5 @@ a {
 
     a {
         color: var(--text-dark);
-        text-decoration: underline;
     }
 }
