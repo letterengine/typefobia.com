@@ -1,3 +1,3 @@
 export default function Charlas() {
-    return <div>Charlas</div>;
+    return <h1>Charlas</h1>;
 }

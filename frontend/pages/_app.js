@@ -1,12 +1,21 @@
+import '../styles/reset.css';
 import '../styles/globals.css';
 // Components
-import Navbar from '../components/Navbar';
+import ModalContextProvider from '../store/modal-context';
+import AppContainer from '../components/Containers/AppContainer';
+import Navbar from '../components/UI/Navbar';
+import Footer from '../components/UI/Footer';
+import Donar from '../components/Overlay/Donar';
 
 export default function MyApp({ Component, pageProps }) {
     return (
-        <>
-            <Navbar />
-            <Component {...pageProps} />
-        </>
+        <ModalContextProvider>
+            <AppContainer>
+                <Navbar />
+                <Component {...pageProps} />
+                <Footer />
+            </AppContainer>
+            <Donar />
+        </ModalContextProvider>
     );
 }

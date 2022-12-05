@@ -1,3 +1,3 @@
 export default function Actividades() {
-    return <div>Actividades</div>;
+    return <h1>Actividades</h1>;
 }

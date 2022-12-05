@@ -1,3 +1,3 @@
 export default function Talleres() {
-    return <div>Talleres</div>;
+    return <h1>Talleres</h1>;
 }

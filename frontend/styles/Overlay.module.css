@@ -1,0 +1,33 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    opacity: 0.5;
+}
+
+.modal {
+    color: var(--text);
+    background-color: var(--bg);
+    position: fixed;
+    top: 50px;
+    width: 200px;
+    padding: 1rem;
+    left: calc(50% - 100px);
+    right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (prefers-color-scheme: dark) {
+    .backdrop {
+        background-color: var(--bg);
+    }
+
+    .modal {
+        color: var(--text-dark);
+        background-color: var(--bg-dark);
+    }
+}
