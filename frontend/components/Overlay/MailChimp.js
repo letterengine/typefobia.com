@@ -6,7 +6,6 @@ export default function MailChimp() {
   const [radioValue, setRadioValue] = useState();
   const emailRef = useRef(null);
   const firstNameRef = useRef(null);
-  const radioeRef = useRef(null);
 
   const handleSettingsChange = (e) => setRadioValue(e.target.value);
 
@@ -60,7 +59,6 @@ export default function MailChimp() {
 
               <label for="radio1">Typefobia en línea</label>
               <input
-                ref={radioeRef}
                 type="radio"
                 id="radio1"
                 name="radio"
@@ -69,7 +67,6 @@ export default function MailChimp() {
               ></input>
               <label for="radio2">Typefobia presencial</label>
               <input
-                ref={radioeRef}
                 type="radio"
                 id="radio2"
                 name="radio"
@@ -78,7 +75,6 @@ export default function MailChimp() {
               ></input>
               <label for="radio3">Ambos</label>
               <input
-                ref={radioeRef}
                 type="radio"
                 id="radio3"
                 name="radio"
