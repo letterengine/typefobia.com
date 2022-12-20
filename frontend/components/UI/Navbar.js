@@ -22,6 +22,7 @@ export default function Navbar() {
                 </Link>
             ))}
             <Button onClick={modalctx.mountHandler}>Donar</Button>
+            <Button onClick={modalctx.mountHandler}>Registro</Button>
         </nav>
     );
 }
