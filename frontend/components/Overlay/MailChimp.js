@@ -42,7 +42,7 @@ export default function MailChimp() {
           <h4 className={classes.titulo}>¿Estás interesadx?</h4>
           <div className={classes.container}>
             <form onSubmit={subscribeUser} className={classes.form}>
-              <label className={classes.label} for="firstName-input">
+              <label className={classes.label} htmlfor="firstName-input">
                 Nombre
               </label>
               <input
@@ -54,7 +54,7 @@ export default function MailChimp() {
                 required
                 className={classes.field}
               />
-              <label className={classes.label} for="email-input">
+              <label className={classes.label} htmlfor="email-input">
                 Email
               </label>
               <input
@@ -75,7 +75,7 @@ export default function MailChimp() {
                   value="Typefobia en línea"
                   onClick={handleSettingsChange}
                 ></input>
-                <label className={classes.label} for="radio1">
+                <label className={classes.label} htmlfor="radio1">
                   Typefobia en línea
                 </label>
               </div>
@@ -87,7 +87,7 @@ export default function MailChimp() {
                   value="Typefobia presencial"
                   onClick={handleSettingsChange}
                 ></input>
-                <label className={classes.label} for="radio2">
+                <label className={classes.label} htmlfor="radio2">
                   Typefobia presencial
                 </label>
               </div>
@@ -99,7 +99,7 @@ export default function MailChimp() {
                   value="Ambos"
                   onClick={handleSettingsChange}
                 ></input>
-                <label className={classes.label} for="radio3">
+                <label className={classes.label} htmlfor="radio3">
                   Ambos
                 </label>
               </div>
