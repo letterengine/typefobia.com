@@ -11,19 +11,23 @@ export default function MailChimp() {
 
   const subscribeUser = async (e) => {
     e.preventDefault();
-    const res = await fetch("api/subscribeUser", {
-      body: JSON.stringify({
-        email: emailRef.current.value,
-        FNAME: firstNameRef.current.value,
-        MMERGE6: radioValue,
-      }),
+    try {
+      const res = await fetch("api/subscribeUser", {
+        body: JSON.stringify({
+          email: emailRef.current.value,
+          FNAME: firstNameRef.current.value,
+          MMERGE6: radioValue,
+        }),
 
-      headers: {
-        "Content-Type": "application/json",
-      },
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-      method: "POST",
-    });
+        method: "POST",
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
