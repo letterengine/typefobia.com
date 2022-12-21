@@ -3,7 +3,7 @@ import MailChimp from "./MailChimp";
 import { ModalContext } from "../../store/modal-context";
 import { useContext } from "react";
 
-export default function ModalConductor() {
+export default function ModalConstructor() {
   const modalctx = useContext(ModalContext);
   switch (modalctx.currentModal) {
     case "Donar":
