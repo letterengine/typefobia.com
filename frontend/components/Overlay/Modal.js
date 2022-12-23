@@ -9,7 +9,7 @@ export default function Modal(props) {
     const modalctx = useContext(ModalContext);
     return modalctx.mounted
         ? createPortal(
-              <div className={classes.modal}>
+              <div className={` ${props.styleModal ? props.styleModal : classes.modal}`}>
                   {props.children}
                   <Button onClick={modalctx.mountHandler}>Cancelar</Button>
               </div>,
