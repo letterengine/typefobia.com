@@ -14,7 +14,8 @@ export default function MailChimp() {
 
   const subscribeUser = async (e) => {
     e.preventDefault();
-    modalctx.mountHandler();
+    modalctx.setModal("Gracias");
+    //modalctx.mountHandler();
     try {
       const res = await fetch("api/subscribeUser", {
         body: JSON.stringify({
