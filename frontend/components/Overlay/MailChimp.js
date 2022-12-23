@@ -7,6 +7,7 @@ import { ModalContext } from "../../store/modal-context";
 export default function MailChimp() {
   const modalctx = useContext(ModalContext);
   const [radioValue, setRadioValue] = useState();
+  const [requestStatus, setRequestStatus] = useState(0);
   const emailRef = useRef(null);
   const firstNameRef = useRef(null);
 
@@ -14,8 +15,6 @@ export default function MailChimp() {
 
   const subscribeUser = async (e) => {
     e.preventDefault();
-    modalctx.setModal("Gracias");
-    //modalctx.mountHandler();
     try {
       const res = await fetch("api/subscribeUser", {
         body: JSON.stringify({
@@ -30,6 +29,8 @@ export default function MailChimp() {
 
         method: "POST",
       });
+      setRequestStatus(res.status);
+      console.log(requestStatus);
     } catch (err) {
       console.log(err);
     }
@@ -120,6 +121,20 @@ export default function MailChimp() {
                 </p>
               </div>
             </form>
+            {requestStatus === 201 ? (
+              <h3 style={{ color: "green" }} className={classes.respuesta}>
+                Registro completado
+              </h3>
+            ) : (
+              ""
+            )}
+            {requestStatus === 400 ? (
+              <h3 style={{ color: "red" }} className={classes.respuesta}>
+                Correo registrado previamente
+              </h3>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </Modal>
