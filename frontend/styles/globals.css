@@ -1,46 +1,3 @@
-@font-face {
-    font-family: 'Comic Neue';
-    src: url('./fonts/ComicNeue-Light.woff2') format('woff2'),
-        url('./fonts/ComicNeue-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Comic Neue';
-    src: url('./fonts/ComicNeue-LightItalic.woff2') format('woff2'),
-        url('./fonts/ComicNeue-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Comic Neue';
-    src: url('./fonts/ComicNeue-Regular.woff2') format('woff2'),
-        url('./fonts/ComicNeue-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Comic Neue';
-    src: url('./fonts/ComicNeue-Italic.woff2') format('woff2'),
-        url('./fonts/ComicNeue-Italic.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Comic Neue';
-    src: url('./fonts/ComicNeue-Bold.woff2') format('woff2'),
-        url('./fonts/ComicNeue-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Comic Neue';
-    src: url('./fonts/ComicNeue-BoldItalic.woff2') format('woff2'),
-        url('./fonts/ComicNeue-BoldItalic.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
-}
-
 :root {
     --bg: white;
     --text: black;
@@ -72,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 700;
+    font-family: Tomasa;
 }
 h1 {
     font-size: 3.5rem;
