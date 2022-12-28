@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import { useContext } from 'react';
-import classes from '../../styles/Overlay.module.css';
-import { ModalContext } from '../../store/modal-context';
+import { ModalContext } from '@store/modal-context';
+import classes from '@styles/Overlay.module.css';
 
 export default function Backdrop() {
     const modalctx = useContext(ModalContext);

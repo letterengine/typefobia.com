@@ -4,30 +4,21 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--bg-dark);
+    background-color: var(--text);
     opacity: 0.5;
 }
 
 .modal {
     color: var(--text);
     background-color: var(--bg);
-    position: fixed;
+    position: absolute;
     top: 50px;
-    width: 200px;
-    padding: 1rem;
-    left: calc(50% - 100px);
+    width: 340px;
+    padding: 1rem 1rem 1.5rem 1rem;
+    left: calc(50% - 170px);
     right: auto;
     display: flex;
     flex-direction: column;
-}
-
-@media (prefers-color-scheme: dark) {
-    .backdrop {
-        background-color: var(--bg);
-    }
-
-    .modal {
-        color: var(--text-dark);
-        background-color: var(--bg-dark);
-    }
+    gap: 0.5rem;
+    margin-bottom: 20px;
 }

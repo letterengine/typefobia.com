@@ -1,7 +1,8 @@
-import Donar from './Donar';
-import MailChimp from './MailChimp';
-import { ModalContext } from '../../store/modal-context';
+import { ModalContext } from '@store/modal-context';
 import { useContext } from 'react';
+// Components
+import Donar from '@components/Overlay/Donar';
+import MailChimp from '@components/Overlay/MailChimp';
 
 export default function ModalConstructor() {
     const modalctx = useContext(ModalContext);

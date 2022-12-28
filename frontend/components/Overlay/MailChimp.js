@@ -1,166 +1,144 @@
-import React, { useRef, useState, useContext } from 'react';
-import Backdrop from './Backdrop';
-import Modal from './Modal';
-import classes from '../../styles/Form.module.css';
-import { ModalContext } from '../../store/modal-context';
+import { useRef, useState, useReducer, useContext } from 'react';
+import { ModalContext } from '@store/modal-context';
+import classes from '@styles/Form.module.css';
+// Components
+import Backdrop from '@components/Overlay/Backdrop';
+import Modal from '@components/Overlay/Modal';
+import Form from '@components/Containers/Form';
+import Input from '@components/UI/Input';
+import Fieldset from '@components/UI/Fieldset';
+
+const meInteresa = ['Typefobia en línea', 'Typefobia presencial', 'Ambos'],
+    defaultTextInputs = {
+        firstName: '',
+        email: '',
+    },
+    textInputsReducer = (state, action) => {
+        switch (action.type) {
+            case 'TEXT_INPUT':
+                return { ...state, [action.key]: action.val };
+            case 'RESET':
+                return { ...defaultTextInputs };
+        }
+        return { ...state };
+    };
 
 export default function MailChimp() {
-    const modalctx = useContext(ModalContext);
-    const [radioValue, setRadioValue] = useState();
-    const [requestStatus, setRequestStatus] = useState(0);
-    const emailRef = useRef(null);
-    const firstNameRef = useRef(null);
-
-    const handleSettingsChange = e => setRadioValue(e.target.value);
-
-    const subscribeUser = async e => {
-        e.preventDefault();
-        try {
-            const res = await fetch('api/subscribeUser', {
-                body: JSON.stringify({
-                    email: emailRef.current.value,
-                    FNAME: firstNameRef.current.value,
-                    MMERGE6: radioValue,
-                }),
-
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-
-                method: 'POST',
+    const [textInputsState, dispatchTextInputs] = useReducer(
+            textInputsReducer,
+            { ...defaultTextInputs }
+        ),
+        [radioValue, setRadioValue] = useState(),
+        [requestStatus, setRequestStatus] = useState(0),
+        modalctxt = useContext(ModalContext),
+        fields = [
+            {
+                ref: useRef(null),
+                id: 'firstName',
+                type: 'text',
+                placeholder: 'Nombre aquí',
+                value: textInputsState.firstName,
+                label: 'Nombre',
+                required: true,
+            },
+            {
+                ref: useRef(null),
+                id: 'email',
+                type: 'email',
+                placeholder: 'Email aquí',
+                value: textInputsState.email,
+                label: 'Email',
+                required: true,
+            },
+        ],
+        textInputChangeHandler = e => {
+            dispatchTextInputs({
+                type: 'TEXT_INPUT',
+                key: e.target.id,
+                val: e.target.value,
             });
-            setRequestStatus(res.status);
-            console.log(requestStatus);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+        },
+        handleSettingsChange = e => setRadioValue(e.target.value),
+        resetForm = () => {
+            setRequestStatus(0);
+            dispatchTextInputs({ type: 'RESET' });
+            modalctxt.resetModals();
+        },
+        subscribeUser = async e => {
+            e.preventDefault();
+            setRequestStatus(1);
+            try {
+                const res = await fetch('api/subscribeUser', {
+                    body: JSON.stringify({
+                        FNAME: textInputsState.firstName,
+                        email: textInputsState.email,
+                        MMERGE6: radioValue,
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    method: 'POST',
+                });
+                setRequestStatus(res.status);
+            } catch (err) {
+                alert(err);
+                resetForm();
+                return;
+            }
+            setTimeout(resetForm, 3000);
+        };
 
     return (
         <>
             <Backdrop />
-            <Modal styleModal={classes.modal}>
-                <div className={classes.container}>
-                    <h4 className={classes.titulo}>¿Estás interesadx?</h4>
-                    <div className={classes.container}>
-                        <form onSubmit={subscribeUser} className={classes.form}>
-                            <label
-                                className={classes.label}
-                                htmlFor='firstName-input'
-                            >
-                                Nombre
-                            </label>
-                            <input
-                                type='text'
-                                id='firstName-input'
-                                name='firstName'
-                                placeholder='Nombre aquí'
-                                ref={firstNameRef}
-                                required
-                                className={classes.field}
+            <Modal header='¿Estás interesadx?'>
+                {requestStatus === 0 || requestStatus === 1 ? (
+                    <Form onSubmit={subscribeUser}>
+                        {fields.map(field => (
+                            <Input
+                                key={`registro-${field.id}`}
+                                ref={field.ref}
+                                id={field.id}
+                                type={field.type}
+                                placeholder={field.placeholder}
+                                value={field.value}
+                                label={field.label}
+                                required={field.required}
+                                onChange={textInputChangeHandler}
                             />
-                            <label
-                                className={classes.label}
-                                htmlFor='email-input'
-                            >
-                                Email
-                            </label>
-                            <input
-                                className={classes.field}
-                                type='email'
-                                id='email-input'
-                                name='email'
-                                placeholder='Email aquí'
-                                ref={emailRef}
-                                required
-                            />
-                            <h5 className={classes.subtitulo}>
-                                Me interesa... *
-                            </h5>
-                            <div className={classes.radio}>
-                                <input
-                                    type='radio'
-                                    id='radio1'
-                                    name='radio'
-                                    value='Typefobia en línea'
-                                    onClick={handleSettingsChange}
-                                ></input>
-                                <label
-                                    className={classes.label}
-                                    htmlFor='radio1'
-                                >
-                                    Typefobia en línea
-                                </label>
-                            </div>
-                            <div className={classes.radio}>
-                                <input
-                                    type='radio'
-                                    id='radio2'
-                                    name='radio'
-                                    value='Typefobia presencial'
-                                    onClick={handleSettingsChange}
-                                ></input>
-                                <label
-                                    className={classes.label}
-                                    htmlFor='radio2'
-                                >
-                                    Typefobia presencial
-                                </label>
-                            </div>
-                            <div className={classes.radio}>
-                                <input
-                                    type='radio'
-                                    id='radio3'
-                                    name='radio'
-                                    value='Ambos'
-                                    onClick={handleSettingsChange}
-                                ></input>
-                                <label
-                                    className={classes.label}
-                                    htmlFor='radio3'
-                                >
-                                    Ambos
-                                </label>
-                            </div>
-                            <div className='flex justify-center items-center'>
-                                <button
-                                    type='submit'
-                                    value=''
-                                    name='subscribe'
-                                    className={classes.enviar}
-                                >
-                                    ¡Pre-Registrate!
-                                </button>
-                                <p className={classes.info}>
-                                    Typefobia utilizará estos datos para estimar
-                                    las personas que estén interesadxs en
-                                    asistir al anti-congreso y tomar las mejores
-                                    decisiones.
-                                </p>
-                            </div>
-                        </form>
-                        {requestStatus === 201 ? (
-                            <h3
-                                style={{ color: 'green' }}
-                                className={classes.respuesta}
-                            >
-                                Registro completado
-                            </h3>
-                        ) : (
-                            ''
-                        )}
-                        {requestStatus === 400 ? (
-                            <h3
-                                style={{ color: 'red' }}
-                                className={classes.respuesta}
-                            >
-                                Correo registrado previamente
-                            </h3>
-                        ) : (
-                            ''
-                        )}
-                    </div>
-                </div>
+                        ))}
+                        <Fieldset
+                            legend='Me interesa... *'
+                            options={meInteresa}
+                            id='radio'
+                            name='interesa'
+                            onClick={handleSettingsChange}
+                        />
+                        <p className={classes.info}>
+                            * Typefobia utilizará estos datos para estimar las
+                            personas que estén interesadxs en asistir al
+                            anti-congreso y tomar las mejores decisiones.
+                        </p>
+                        <input
+                            type='submit'
+                            className={classes.input}
+                            value={
+                                requestStatus === 0
+                                    ? '¡Pre-Registrate!'
+                                    : 'Espera...'
+                            }
+                            disabled={requestStatus === 0 ? false : true}
+                        />
+                    </Form>
+                ) : (
+                    <p className={classes.respuesta}>
+                        {requestStatus === 201
+                            ? 'Registro Completado'
+                            : requestStatus === 400
+                            ? 'Correo registrado previamente'
+                            : '¡Ocurrió un error desconocido! Recarga la página e intenta de nuevo'}
+                    </p>
+                )}
             </Modal>
         </>
     );

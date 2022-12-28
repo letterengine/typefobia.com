@@ -2,28 +2,33 @@ import React, { useState } from 'react';
 
 export const ModalContext = React.createContext({
     mounted: false,
+    currentModal: '',
     mountHandler: () => {},
     setModal: () => {},
+    resetModals: () => {},
 });
 
 export default function ModalContextProvider(props) {
-    const [currentModal, setCurrentModal] = useState('');
-    const setModal = current => {
-        setCurrentModal(current);
-        // console.log(currentModal);
-    };
+    const [mounted, setMounted] = useState(false),
+        [currentModal, setCurrentModal] = useState(''),
+        setModal = current => {
+            setCurrentModal(current);
+        },
+        resetModals = () => {
+            setCurrentModal('');
+            setMounted(false);
+        };
 
-    const [mounted, setMounted] = useState(false);
     return (
         <ModalContext.Provider
             value={{
-                mounted: mounted,
+                mounted,
+                currentModal,
                 mountHandler: () => {
                     setMounted(prevMounted => !prevMounted);
-                    console.log(mounted);
                 },
                 setModal,
-                currentModal,
+                resetModals,
             }}
         >
             {props.children}

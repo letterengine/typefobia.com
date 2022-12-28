@@ -1,5 +1,44 @@
 .nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--text);
     gap: 1rem;
     padding: 1rem;
+}
+
+.pages,
+.modals {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav a,
+.nav button {
+    min-width: 100px;
+}
+
+.nav a {
+    color: var(--bg);
+    text-decoration: none;
+}
+
+.nav button {
+    color: var(--text);
+    background-color: var(--bg);
+    border-color: var(--bg);
+}
+
+@media (hover) {
+    .nav button {
+        color: var(--bg);
+        background-color: var(--text);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav {
+        flex-direction: column;
+    }
 }
