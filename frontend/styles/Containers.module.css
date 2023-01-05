@@ -2,6 +2,7 @@
     max-width: 800px;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
     gap: 1rem;
 }
 
@@ -27,9 +28,14 @@
 .section {
     width: 100%;
     display: flex;
-
     gap: 1rem;
     border-top: 2px solid var(--text);
     border-bottom: 2px solid var(--text);
     padding: 2rem 2rem 3rem 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .section {
+        flex-direction: column;
+    }
 }

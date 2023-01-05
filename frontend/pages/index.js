@@ -1,3 +1,4 @@
+import Head from 'next/head';
 // Components
 import MainContainer from '@components/Containers/MainContainer';
 import Section from '@components/Containers/Section';
@@ -6,6 +7,14 @@ import Container from '@components/Containers/Container';
 export default function Home() {
     return (
         <>
+            <Head>
+                <title>Typefobia</title>
+                <meta
+                    name='description'
+                    content='Espacio anti académico cuyo objetivo es generar un pensamiento de contra cultura donde lo importante no es aprender si no valorar a las personas y lo ya aprendido.'
+                />
+                <link rel='icon' href='/favicon.ico' />
+            </Head>
             <MainContainer>
                 <h1>Typefobia</h1>
                 <p>

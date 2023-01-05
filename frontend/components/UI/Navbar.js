@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { ModalContext } from '@store/modal-context';
 import Link from 'next/link';
 import classes from '@styles/Navbar.module.css';
-// Components
 import Button from '@components/UI/Button';
 
 const menu = [
@@ -28,8 +27,8 @@ export default function Navbar() {
                 ))}
             </div>
             <div className={classes.modals}>
-                <Button onClick={handleClick}>Donar</Button>
                 <Button onClick={handleClick}>Registro</Button>
+                <Button onClick={handleClick}>Donar</Button>
             </div>
         </nav>
     );
