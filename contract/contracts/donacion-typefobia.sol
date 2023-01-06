@@ -43,7 +43,7 @@ contract DonacionTypefobia {
     }
 
     function donar() public payable {
-        require(msg.value >= 10 ether, "Debe ser mayor a 10 MATIC");
+        require(msg.value >= 0.01 ether, "Debe ser mayor a 0.01 MATIC");
         registrarDonacion();
         emit Donacion(msg.sender, msg.value);
     }

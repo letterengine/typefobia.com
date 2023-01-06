@@ -24,6 +24,8 @@ const Input = forwardRef((props, ref) => {
                 value={props.value}
                 required={Boolean(props.required)}
                 onChange={props.onChange}
+                min={props.min}
+                step={props.step}
             />
         </div>
     );

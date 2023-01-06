@@ -31,7 +31,7 @@ export default function ConnectButton() {
                                         onClick={openConnectModal}
                                         type='button'
                                     >
-                                        Connect Wallet
+                                        Conectar Wallet
                                     </Button>
                                 );
                             }
@@ -42,7 +42,7 @@ export default function ConnectButton() {
                                         onClick={openChainModal}
                                         type='button'
                                     >
-                                        Wrong network
+                                        Red incorrecta
                                     </Button>
                                 );
                             }

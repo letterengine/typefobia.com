@@ -1,31 +1,31 @@
 {
-  "name": "contracts",
-  "version": "1.0.0",
-  "description": "Contrato inteligente para donaciones en typefobia.com",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/letterengine/typefobia.com.git"
-  },
-  "keywords": [
-    "ethereum",
-    "polygon",
-    "smart",
-    "contract",
-    "solidity",
-    "blockchain"
-  ],
-  "author": "Letter Engine",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/letterengine/typefobia.com/issues"
-  },
-  "homepage": "https://github.com/letterengine/typefobia.com#readme",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-    "hardhat": "^2.12.5"
-  }
+    "name": "contracts",
+    "version": "1.0.0",
+    "description": "Contrato inteligente para donaciones en typefobia.com",
+    "main": "index.js",
+    "scripts": {
+        "test": "npx hardhat test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/letterengine/typefobia.com.git"
+    },
+    "keywords": [
+        "ethereum",
+        "polygon",
+        "smart",
+        "contract",
+        "solidity",
+        "blockchain"
+    ],
+    "author": "Letter Engine",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/letterengine/typefobia.com/issues"
+    },
+    "homepage": "https://github.com/letterengine/typefobia.com#readme",
+    "devDependencies": {
+        "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+        "hardhat": "^2.12.5"
+    }
 }

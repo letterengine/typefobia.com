@@ -46,13 +46,15 @@ describe('Contrato DonacionTypefobia', function () {
         expect(await hardhatDonacionTypefobia.total()).to.equal(
             ethers.utils.parseEther('20')
         );
-        // Donaciones menores a 10 MATIC
+        // Donaciones menores a 0.01 MATIC
         try {
             await hardhatDonacionTypefobia
                 .connect(admin)
-                .donar({ value: ethers.utils.parseEther('1') });
+                .donar({ value: ethers.utils.parseEther('0.005') });
         } catch (err) {
-            expect(err.toString()).to.have.string('Debe ser mayor a 10 MATIC');
+            expect(err.toString()).to.have.string(
+                'Debe ser mayor a 0.01 MATIC'
+            );
         }
     });
 
