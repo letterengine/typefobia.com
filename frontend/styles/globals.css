@@ -38,17 +38,18 @@ h4,
 h5,
 h6 {
     font-family: Tomasa;
+    overflow-x: scroll;
 }
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 3.75rem;
 }
 h2 {
-    font-size: 3rem;
+    font-size: 2.75rem;
     line-height: 3.25rem;
 }
 h3 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     line-height: 2.75rem;
 }
 h4 {
