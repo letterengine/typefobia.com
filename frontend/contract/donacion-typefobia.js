@@ -1,30 +1,17 @@
-import { ethers } from 'ethers';
-import abiJson from './abi.json';
+import conectarContrato from './conectarContrato';
 
-const contractAddress = process.env.NEXT_PUBLIC_CONTRACT;
-
-async function conectarContrato() {
-    let donarTypefobia;
-    try {
-        const { ethereum } = window;
-        if (ethereum) {
-            const provider = new ethers.providers.Web3Provider(ethereum),
-                signer = provider.getSigner();
-            donarTypefobia = new ethers.Contract(
-                contractAddress,
-                abiJson.abi,
-                signer
-            );
-        } else {
-            throw new Error('Hubo un problema al conectarse con el contrato.');
-        }
-    } catch (error) {
-        console.log('ERROR:', error);
+export async function getCurrentAddress() {
+    let currentAddress = false;
+    const { ethereum } = window;
+    if (ethereum) {
+        currentAddress = ethereum.selectedAddress;
+    } else {
+        throw new Error('Hubo un problema con MetaMask');
     }
-    return donarTypefobia;
+    return currentAddress.toLowerCase();
 }
 
-async function donarCrypto(monto) {
+export async function donarCrypto(monto) {
     const donarTypefobia = await conectarContrato();
     let donar;
     try {
@@ -39,4 +26,20 @@ async function donarCrypto(monto) {
     }
 }
 
-export default donarCrypto;
+export async function retirarCrypto() {
+    const donarTypefobia = await conectarContrato();
+    let retirar;
+    try {
+        const fondos = await donarTypefobia.fondos();
+        retirar = await donarTypefobia.retirarFondos(fondos.toString(), {
+            gasLimit: 900000,
+        });
+        console.log(`Retirando ${fondos} MATIC`);
+        await retirar.wait();
+        console.log('Transacción exitosa', retirar);
+        return retirar;
+    } catch (err) {
+        console.log(err);
+        return 'Refresca la página e intenta de nuevo.';
+    }
+}

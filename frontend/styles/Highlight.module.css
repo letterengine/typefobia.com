@@ -1,0 +1,43 @@
+.highlight * {
+    width: 100%;
+}
+
+.highlight {
+    background-color: var(--text);
+    color: var(--bg);
+    font-size: 1.25rem;
+    line-height: 150%;
+    padding: 2rem;
+    opacity: 1;
+    animation: aparecer 2s ease;
+    gap: 2rem;
+}
+
+.left * {
+    text-align: left;
+}
+
+.highlight li {
+    list-style-position: outside;
+    margin-left: 1.25rem;
+    padding: 0 1.25rem 0 1rem;
+}
+
+.highlight h1,
+.highlight h2,
+.highlight h3,
+.highlight h4,
+.highlight h5,
+.highlight h6,
+.highlight a {
+    color: aqua;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

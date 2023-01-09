@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 export default async (req, res) => {
     const { email, FNAME, MMERGE6 } = req.body;
 
-    //console.log({ email, FNAME, MMERGE6 });
+    console.log({ email, FNAME, MMERGE6 });
 
     if (!email) {
         return res.status(400).json({ error: 'Email is required' });

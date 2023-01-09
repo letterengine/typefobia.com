@@ -15,6 +15,14 @@ html,
 body {
     color: var(--text);
     background-color: var(--bg);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 255, 0, 1) 25%,
+        rgba(0, 255, 0, 1) 50%,
+        rgba(0, 255, 255, 1) 75%,
+        rgba(0, 0, 255, 1) 100%
+    );
     font-family: 'Comic Neue', sans-serif;
 }
 
@@ -67,6 +75,16 @@ strong {
 a {
     color: var(--text);
     text-decoration: underline;
+}
+
+ul {
+    text-align: left;
+    list-style-type: disc;
+}
+
+ol {
+    text-align: left;
+    list-style-type: decimal;
 }
 
 @media (hover) {
