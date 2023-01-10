@@ -16,7 +16,7 @@ const actividadesContent = {
                 desde su destacada trayectoria profesional nos traen
                 perspectivas de diversas escuelas y comunidades internacionales.
                 En el espacio presencial, contaremos con la presencia de Frank
-                Mendez, Ainara Villanueva, Uzziel Alvarado y José Melendez
+                Méndez, Ainara Bustamante, Uzziel Alvarado y José Melendez
                 (Pepino), quienes nos compartirán su perspectiva desde un
                 entorno local en Puebla y el centro de México.
             </p>
