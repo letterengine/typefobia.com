@@ -1,0 +1,45 @@
+.taller * {
+    width: 100%;
+    text-align: left;
+    justify-content: stretch;
+}
+
+.taller {
+    padding: 2rem;
+    color: var(--bg);
+    background-color: var(--text);
+    animation: aparecer 2s ease;
+}
+
+.taller p,
+.taller li {
+    font-size: 1.25rem;
+    line-height: 150%;
+}
+
+.taller ol,
+.taller ul {
+    margin-left: 2rem;
+}
+
+.taller a {
+    color: magenta;
+}
+
+.taller h1,
+.taller h2,
+.taller h3,
+.taller h4,
+.taller h5,
+.taller h6 {
+    color: aqua;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

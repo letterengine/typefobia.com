@@ -114,6 +114,83 @@ const actividadesContent = {
             </ol>
         </>
     ),
+    suckMyType: (
+        <>
+            <p>
+                Con motivo de la primera edición de Typefobia, se convoca a la
+                comunidad de diseño a participar en nuestro burnbook «SuCK my
+                TYpe»
+            </p>
+            <p>
+                Sabemos el impacto que tiene una crítica negativa a nuestro
+                trabajo y/o persona durante nuestra carrera profesional, que
+                muchas veces inicia a la par de nuestra formación académica. Por
+                lo que creemos que expresar nuestros sentimientos a través de
+                cualquier manifestación artística, además de compartirlo con
+                colegas que atravesaron la misma situación, puede ser liberador
+                y funcionar como una forma de protesta ante los comentarios que
+                no aportan a nuestro crecimiento profesional.
+            </p>
+            <p>
+                Es por esto que el equipo organizador de Typefobia te invita a
+                participar con una intervención del estilo «bullet journal»
+                exponiendo un comentario o crítica negativa que desvalorizó tu
+                trabajo o persona durante tu vida profesional y/o académica.
+            </p>
+            <h4>Bases</h4>
+            <ol>
+                <li>
+                    Denuncia tu vivencia a través de la intervención de una hoja
+                    tamaño carta. Pueden ser más de una vivencia en una misma
+                    hoja o en diferentes. ¡El límite no existe!
+                </li>
+                <li>
+                    La técnica es totalmente libre, considerando que se anexará
+                    a un libro junto a más denuncias.
+                </li>
+                <li>
+                    Si asistirás al anticongreso, te pedimos confirmar tu
+                    participación por medio del correo typefobia@gmail.com con
+                    el asunto SUCK MY TYPE y traer tu hoja para incluirla en el
+                    libro.
+                </li>
+                <li>
+                    Las denuncias realizadas por personas que no asistirán al
+                    anticongreso también serán incluidas en el libro, por lo que
+                    se pide enviar su participación de forma digital y en
+                    calidad óptima al correo typefobia@gmail.com con el asunto:
+                    SUCK MY PRINT. La organización de Typefobia se encargará de
+                    su impresión.
+                </li>
+                <li>
+                    Tu denuncia puede ser anónima o pública, por lo que se pide
+                    aclararlo a la organización de Typefobia ya sea el día del
+                    evento o por medio del correo previamente mencionado.
+                </li>
+                <li>
+                    Algunos trabajos seleccionados se imprimirán en un formato
+                    más grande para ser exhibidos durante el anticongreso.
+                </li>
+                <li>
+                    Deberás registrarte por medio del correo (dirección de
+                    correo de typefobia tal vez) para confirmar tu
+                    participación.
+                </li>
+                <li>
+                    Fecha límite para confirmar tu participación el día del
+                    evento: viernes 27 de enero de 2023
+                </li>
+                <li>
+                    Fecha límite para enviar tu denuncia para imprimir:
+                    miércoles 1 de febrero de 2023.
+                </li>
+            </ol>
+            <p>
+                ambién podrás realizar tu denuncia durante el evento para
+                posteriormente anexarla al libro.
+            </p>
+        </>
+    ),
 };
 
 export default actividadesContent;

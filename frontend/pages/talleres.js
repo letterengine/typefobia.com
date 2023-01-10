@@ -1,6 +1,8 @@
+import talleresContent from '@content/talleresContent';
 import MainContainer from '@components/Containers/MainContainer';
 import Section from '@components/Containers/Section';
 import Container from '@components/Containers/Container';
+import Taller from '@components/Layout/Taller';
 
 export default function Talleres() {
     return (
@@ -10,7 +12,16 @@ export default function Talleres() {
             </MainContainer>
             <Section id='talleres'>
                 <Container>
-                    <h2>Por confirmar</h2>
+                    <h2>Virtuales</h2>
+                    {Object.values(talleresContent.virtuales).map(taller => (
+                        <Taller {...taller} />
+                    ))}
+                </Container>
+                <Container>
+                    <h2>Presenciales</h2>
+                    {Object.values(talleresContent.presenciales).map(taller => (
+                        <Taller {...taller} />
+                    ))}
                 </Container>
             </Section>
         </>

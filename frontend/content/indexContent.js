@@ -14,15 +14,14 @@ const indexContent = {
                 través de distintas actividades la palabra tipografía.
             </p>
             <p>
-                Evento de entrada con cooperación sugerida a partir de $150 (no
-                incluye consumo).
+                Evento de entrada con cooperación sugerida a partir de $150 o
+                10.00 MATIC (no incluye consumo).
             </p>
         </>
     ),
     fecha: (
-        <p>
-            La fecha estimada para el evento es entre finales de Enero del 2023
-            y principios de Febrero del 2023
+        <p style={{ fontSize: '1.25rem', fontWeight: 700 }}>
+            La fecha estimada para el evento es el 4 y 5 de febrero del 2023.
         </p>
     ),
     musaMap: {

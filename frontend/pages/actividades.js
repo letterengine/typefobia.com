@@ -14,9 +14,10 @@ export default function Talleres() {
                 <div className={classes['sub-nav']}>
                     <a href='#mesa-redonda'>Mesa Redonda</a>
                     <a href='#anti-exposicion'>Anti Exposición</a>
+                    <a href='#suck-my-type'>SuckMyType</a>
                 </div>
             </MainContainer>
-            <Section id='talleres'>
+            <Section id='actividades'>
                 <Container>
                     <h2 id='mesa-redonda'>Mesa Redonda</h2>
                     <Highlight contenido={contenido.mesaRedonda} />
@@ -27,6 +28,10 @@ export default function Talleres() {
                         contenido={contenido.antiExposicion}
                         left={true}
                     />
+                </Container>
+                <Container>
+                    <h2 id='suck-my-type'>SuCK my TYpe</h2>
+                    <Highlight contenido={contenido.suckMyType} left={true} />
                 </Container>
             </Section>
         </>
