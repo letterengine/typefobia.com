@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import classes from '@styles/Donar.module.css';
 // PayPal
 import paypalOptions from '@utils/paypal-config';
-import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 // Contrato
 import {
     getCurrentAddress,
@@ -16,11 +16,12 @@ import Modal from '@components/Overlay/Modal';
 import Input from '@components/UI/Input';
 import ConnectButton from '@components/UI/ConnectButton';
 import Button from '@components/UI/Button';
+import PayPalButton from '../Layout/PayPalButton';
 
 const wei = matic => ethers.utils.parseEther(matic).toString(),
     admin = process.env.NEXT_PUBLIC_CONTRACT_ADMIN.toLowerCase();
 
-export default function Donar() {
+export default function Donar({ currency, showSpinner }) {
     const montoInicial = '0.01',
         montoPaypalInicial = '1.00',
         montoRef = useRef(montoInicial),
@@ -74,7 +75,6 @@ export default function Donar() {
                             ref={montoPaypalRef}
                             id='monto-donacion-paypal'
                             type='number'
-                            placeholder={`$${montoPaypalInicial}`}
                             label='Monto de donación (PESOS)'
                             value={montoPaypal}
                             min={montoPaypalInicial}
@@ -82,29 +82,10 @@ export default function Donar() {
                             required={true}
                             onChange={handleMontoPaypal}
                         />
-                        <PayPalButtons
-                            style={{
-                                layout: 'horizontal',
-                                color: 'black',
-                                tagline: false,
-                            }}
-                            createOrder={(data, actions) => {
-                                return actions.order.create({
-                                    purchase_units: [
-                                        {
-                                            amount: {
-                                                value: montoPaypal,
-                                            },
-                                        },
-                                    ],
-                                });
-                            }}
-                            onApprove={(data, actions) => {
-                                return actions.order.capture().then(details => {
-                                    const name = details.payer.name.given_name;
-                                    alert(`Donación completada by ${name}`);
-                                });
-                            }}
+                        <PayPalButton
+                            currency={paypalOptions.currency}
+                            showSpinner={false}
+                            amount={montoPaypal}
                         />
                     </div>
                 </PayPalScriptProvider>
@@ -121,7 +102,6 @@ export default function Donar() {
                         ref={montoRef}
                         id='monto-donacion'
                         type='number'
-                        placeholder={`${montoInicial} MATIC`}
                         label='Monto de donación (MATIC)'
                         value={monto}
                         min={montoInicial}
