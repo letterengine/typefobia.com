@@ -22,13 +22,19 @@ const wei = matic => ethers.utils.parseEther(matic).toString(),
 
 export default function Donar() {
     const montoInicial = '0.01',
+        montoPaypalInicial = '1.00',
         montoRef = useRef(montoInicial),
+        montoPaypalRef = useRef(montoPaypalInicial),
         [monto, setMonto] = useState(montoInicial),
+        [montoPaypal, setMontoPaypal] = useState(montoPaypalInicial),
         [espera, setEspera] = useState(false),
         [hash, setHash] = useState(false),
         [currentAddress, setCurrentAddress] = useState(),
         handleMonto = e => {
             setMonto(e.target.value);
+        },
+        handleMontoPaypal = e => {
+            setMontoPaypal(e.target.value);
         },
         handleDonar = async e => {
             setEspera(true);
@@ -64,11 +70,40 @@ export default function Donar() {
                 <PayPalScriptProvider options={paypalOptions}>
                     <div className={classes.bloque}>
                         <h5>PayPal</h5>
+                        <Input
+                            ref={montoPaypalRef}
+                            id='monto-donacion-paypal'
+                            type='number'
+                            placeholder={`$${montoPaypalInicial}`}
+                            label='Monto de donación (PESOS)'
+                            value={montoPaypal}
+                            min={montoPaypalInicial}
+                            step={montoPaypalInicial}
+                            required={true}
+                            onChange={handleMontoPaypal}
+                        />
                         <PayPalButtons
                             style={{
                                 layout: 'horizontal',
                                 color: 'black',
                                 tagline: false,
+                            }}
+                            createOrder={(data, actions) => {
+                                return actions.order.create({
+                                    purchase_units: [
+                                        {
+                                            amount: {
+                                                value: montoPaypal,
+                                            },
+                                        },
+                                    ],
+                                });
+                            }}
+                            onApprove={(data, actions) => {
+                                return actions.order.capture().then(details => {
+                                    const name = details.payer.name.given_name;
+                                    alert(`Donación completada by ${name}`);
+                                });
                             }}
                         />
                     </div>
