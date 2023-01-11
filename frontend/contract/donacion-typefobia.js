@@ -16,7 +16,7 @@ export async function donarCrypto(monto) {
     let donar;
     try {
         donar = await donarTypefobia.donar({ value: monto, gasLimit: 900000 });
-        console.log(`Donando ${monto} MATIC`);
+        console.log(`Donando ${monto} wei`);
         await donar.wait();
         console.log('Transacción exitosa', donar);
         return donar;
@@ -31,12 +31,12 @@ export async function retirarCrypto() {
     let retirar;
     try {
         const fondos = await donarTypefobia.fondos();
-        console.log(`Fondos: ${fondos}`, typeof fondos);
+        console.log(`Fondos: ${fondos} wei`, typeof fondos);
         if (fondos != 0) {
             retirar = await donarTypefobia.retirarFondos(fondos.toString(), {
                 gasLimit: 900000,
             });
-            console.log(`Retirando ${fondos} MATIC`);
+            console.log(`Retirando ${fondos} wei`);
             await retirar.wait();
             console.log('Transacción exitosa', retirar);
         }
