@@ -39,11 +39,7 @@
         },
         {
             "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
+                { "internalType": "uint256", "name": "", "type": "uint256" }
             ],
             "name": "donaciones",
             "outputs": [
@@ -72,11 +68,7 @@
             "inputs": [],
             "name": "fondos",
             "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
+                { "internalType": "uint256", "name": "", "type": "uint256" }
             ],
             "stateMutability": "view",
             "type": "function"
@@ -98,18 +90,11 @@
             "inputs": [],
             "name": "total",
             "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
+                { "internalType": "uint256", "name": "", "type": "uint256" }
             ],
             "stateMutability": "view",
             "type": "function"
         },
-        {
-            "stateMutability": "payable",
-            "type": "receive"
-        }
+        { "stateMutability": "payable", "type": "receive" }
     ]
 }
