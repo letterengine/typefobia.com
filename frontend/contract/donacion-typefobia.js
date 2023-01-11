@@ -31,12 +31,15 @@ export async function retirarCrypto() {
     let retirar;
     try {
         const fondos = await donarTypefobia.fondos();
-        retirar = await donarTypefobia.retirarFondos(fondos.toString(), {
-            gasLimit: 900000,
-        });
-        console.log(`Retirando ${fondos} MATIC`);
-        await retirar.wait();
-        console.log('Transacción exitosa', retirar);
+        console.log(`Fondos: ${fondos}`, typeof fondos);
+        if (fondos != 0) {
+            retirar = await donarTypefobia.retirarFondos(fondos.toString(), {
+                gasLimit: 900000,
+            });
+            console.log(`Retirando ${fondos} MATIC`);
+            await retirar.wait();
+            console.log('Transacción exitosa', retirar);
+        }
         return retirar;
     } catch (err) {
         console.log(err);

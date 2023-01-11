@@ -21,7 +21,7 @@ import PayPalButton from '../Layout/PayPalButton';
 const wei = matic => ethers.utils.parseEther(matic).toString(),
     admin = process.env.NEXT_PUBLIC_CONTRACT_ADMIN.toLowerCase();
 
-export default function Donar({ currency, showSpinner }) {
+export default function Donar() {
     const montoInicial = '0.01',
         montoPaypalInicial = '1.00',
         montoRef = useRef(montoInicial),
@@ -110,18 +110,16 @@ export default function Donar({ currency, showSpinner }) {
                         onChange={handleMonto}
                     />
                     <Button onClick={handleDonar} disabled={espera}>
-                        {espera ? 'Donando...' : 'Donar'}
+                        {espera ? 'Espera...' : 'Donar'}
                     </Button>
                     {currentAddress === admin ? (
                         <Button onClick={handleRetirar}>
-                            {espera ? 'Retirando...' : `Retirar`}
+                            {espera ? 'Espera...' : `Retirar`}
                         </Button>
                     ) : null}
                     {hash && !espera ? (
                         <div className={classes.donacion}>
-                            <p className={classes.mensaje}>
-                                ¡Gracias por tu donación!
-                            </p>
+                            <p className={classes.mensaje}>¡Gracias!</p>
                             <a
                                 href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER}/tx/${hash}`}
                                 target='blank'
