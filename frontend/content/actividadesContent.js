@@ -186,7 +186,7 @@ const actividadesContent = {
                 </li>
             </ol>
             <p>
-                ambién podrás realizar tu denuncia durante el evento para
+                También podrás realizar tu denuncia durante el evento para
                 posteriormente anexarla al libro.
             </p>
         </>

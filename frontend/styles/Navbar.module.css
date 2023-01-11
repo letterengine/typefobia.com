@@ -3,9 +3,20 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: var(--text);
     gap: 1rem;
     padding: 1rem;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.menu img {
+    padding: 0.5rem;
+    background-color: var(--text);
+    border-radius: 100%;
 }
 
 .pages,
@@ -14,39 +25,88 @@
     gap: 0.5rem;
 }
 
-.nav a,
-.nav button {
-    min-width: 100px;
+.pages {
+    background-color: var(--text);
+    padding: 0.5rem;
 }
 
-.nav a {
+.nav * {
     color: var(--bg);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav button {
-    color: var(--text);
-    background-color: var(--bg);
+    min-width: 100px;
+    color: var(--bg);
+    background-color: var(--text);
     border-color: var(--bg);
 }
 
+.nav a {
+    border-top: 2px solid var(--bg);
+    color: var(--bg);
+    font-weight: 700;
+    padding: 0.5rem;
+}
+
+.menu-button {
+    cursor: pointer;
+    color: var(--text);
+    transition: all 0.5s ease;
+}
+
 @media (hover) {
-    .nav button {
+    .nav button:hover {
+        color: var(--text);
+        background-color: var(--bg);
+    }
+    .menu-button:hover {
         color: var(--bg);
-        background-color: var(--text);
     }
 }
 
-@media screen and (max-width: 600px) {
+.hide {
+    display: none;
+    opacity: 0%;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 800px) {
     .nav {
         flex-direction: column;
     }
-    .pages {
-        justify-self: flex-end;
-        flex-wrap: wrap;
-        justify-content: center;
+    .menu {
+        flex-direction: column;
         gap: 1rem;
-        padding: 1rem 0;
     }
-
+    .menu a {
+        width: 100%;
+    }
+    .menu img {
+        margin-top: 2rem;
+        width: 150px;
+        height: 150px;
+    }
+    .pages {
+        width: 90%;
+        max-width: 300px;
+        border: 2px solid var(--bg);
+        flex-direction: column;
+        gap: 1rem;
+        position: fixed;
+        top: 200px;
+        padding: 2rem;
+        animation: aparecer 1s ease;
+    }
 }

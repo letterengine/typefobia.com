@@ -14,8 +14,8 @@ const indexContent = {
                 través de distintas actividades la palabra tipografía.
             </p>
             <p>
-                Evento de entrada con cooperación sugerida a partir de $150 o
-                10.00 MATIC (no incluye consumo).
+                Evento de entrada con cooperación sugerida a partir de $150 o 10
+                MATIC (no incluye consumo).
             </p>
         </>
     ),

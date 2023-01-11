@@ -28,7 +28,7 @@ export default function Home() {
                 </Container>
                 <Container>
                     <h3>Locación</h3>
-                    <h5>Musa Cultura Visual</h5>
+                    <h4>Musa Cultura Visual</h4>
                     <iframe {...contenido.musaMap} />
                 </Container>
             </Section>

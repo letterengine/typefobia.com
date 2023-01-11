@@ -8,7 +8,7 @@ export async function getCurrentAddress() {
     } else {
         throw new Error('Hubo un problema con MetaMask');
     }
-    return currentAddress.toLowerCase();
+    return currentAddress?.toLowerCase();
 }
 
 export async function donarCrypto(monto) {
