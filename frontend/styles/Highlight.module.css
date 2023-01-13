@@ -3,7 +3,7 @@
 }
 
 .highlight {
-    background-color: var(--text);
+    background-color: black;
     color: var(--bg);
     font-size: 1.25rem;
     line-height: 150%;
@@ -11,6 +11,7 @@
     opacity: 1;
     animation: aparecer 2s ease;
     gap: 2rem;
+    box-shadow: 1rem 1rem;
 }
 
 .left * {
@@ -30,12 +31,41 @@
 .highlight h5,
 .highlight h6,
 .highlight a {
-    color: aqua;
+    color: cyan;
 }
 
 .highlight p {
     padding-top: 1.5rem;
-    border-top: 1px solid var(--bg);
+    border-top: 1px solid cyan;
+}
+
+.highlight ul {
+    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    text-align: left;
+}
+
+.highlight li {
+    text-align: justify;
+}
+
+.highlight li span {
+    font-weight: bold;
+}
+
+.precios {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 2px solid coral;
+}
+
+.precios * {
+    text-align: left;
 }
 
 @keyframes aparecer {

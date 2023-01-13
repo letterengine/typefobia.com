@@ -27,6 +27,12 @@ const talleresContent = {
                     </a>{' '}
                     instalado
                 </li>,
+                <li>
+                    <a href='https://www.python.org/downloads/' target='blank'>
+                        Python
+                    </a>{' '}
+                    instalado
+                </li>,
             ],
             nivel: 'Apto para todo público.',
             horas: 3,

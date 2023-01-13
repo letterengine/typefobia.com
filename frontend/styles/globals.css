@@ -18,10 +18,11 @@ body {
     background: linear-gradient(
         90deg,
         rgba(255, 0, 0, 1) 0%,
-        rgba(255, 255, 0, 1) 25%,
-        rgba(0, 255, 0, 1) 50%,
-        rgba(0, 255, 255, 1) 75%,
-        rgba(0, 0, 255, 1) 100%
+        rgba(255, 255, 0, 1) 20%,
+        rgba(0, 255, 0, 1) 40%,
+        rgba(0, 255, 255, 1) 60%,
+        rgba(0, 0, 255, 1) 80%,
+        rgba(255, 0, 255, 1) 100%
     );
     font-family: 'Comic Neue', sans-serif;
 }
@@ -86,6 +87,20 @@ ul {
 ol {
     text-align: left;
     list-style-type: decimal;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text);
+    text-align: left;
+}
+
+.code-block {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: stretch;
 }
 
 @media (hover) {

@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Container from '@components/Containers/Container';
 import classes from '@styles/Taller.module.css';
 
@@ -15,10 +16,11 @@ export default function Taller(props) {
             <h5>Material</h5>
             <ul>
                 {props.material.map((mat, i) => {
+                    const tallerID = `${id}-material-${i}`;
                     return typeof mat === 'string' ? (
-                        <li key={`${id}-material-${i}`}>{mat}</li>
+                        <li key={tallerID}>{mat}</li>
                     ) : (
-                        mat
+                        <Fragment key={tallerID}>{mat}</Fragment>
                     );
                 })}
             </ul>

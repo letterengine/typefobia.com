@@ -23,13 +23,24 @@ export default function Home() {
             </MainContainer>
             <Section id='info'>
                 <Container>
+                    <h3>Precios</h3>
+                    <Highlight contenido={contenido.precios} />
+                </Container>
+                <Container>
+                    <h3>Inscripción</h3>
+                    <Highlight contenido={contenido.inscripcion} />
+                </Container>
+                <Container>
                     <h3>Fecha</h3>
                     {contenido.fecha}
                 </Container>
                 <Container>
                     <h3>Locación</h3>
                     <h4>Musa Cultura Visual</h4>
-                    <iframe {...contenido.musaMap} />
+                    <iframe
+                        style={{ border: 0, boxShadow: '1rem 1rem' }}
+                        {...contenido.musaMap}
+                    />
                 </Container>
             </Section>
         </>

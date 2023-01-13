@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { ModalContext } from '@store/modal-context';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../assets/logo.svg';
@@ -14,7 +15,8 @@ const menu = [
 ];
 
 export default function Navbar() {
-    const modalctx = useContext(ModalContext),
+    const router = useRouter(),
+        modalctx = useContext(ModalContext),
         [smallMenu, setSmallMenu] = useState(false),
         [menuOn, setMenuOn] = useState(false),
         handleClick = e => {
@@ -63,7 +65,15 @@ export default function Navbar() {
                     }`.trim()}
                 >
                     {menu.map((navEl, i) => (
-                        <Link key={`nav-link-${i}`} href={navEl.url}>
+                        <Link
+                            className={
+                                router.pathname === navEl.url
+                                    ? classes['menu-active']
+                                    : ''
+                            }
+                            key={`nav-link-${i}`}
+                            href={navEl.url}
+                        >
                             {navEl.text}
                         </Link>
                     ))}
