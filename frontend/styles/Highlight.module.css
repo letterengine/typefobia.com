@@ -48,10 +48,6 @@
     text-align: left;
 }
 
-.highlight li {
-    text-align: justify;
-}
-
 .highlight li span {
     font-weight: bold;
 }
@@ -61,11 +57,16 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border: 2px solid coral;
+    border: 2px solid var(--bg);
 }
 
 .precios * {
     text-align: left;
+}
+
+.precios h4 {
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg);
 }
 
 @keyframes aparecer {
@@ -74,5 +75,11 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .highlight {
+        font-size: 1rem;
     }
 }

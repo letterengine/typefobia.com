@@ -4,11 +4,15 @@ export async function getCurrentAddress() {
     let currentAddress = false;
     const { ethereum } = window;
     if (ethereum) {
-        currentAddress = ethereum.selectedAddress;
+        try {
+            currentAddress = ethereum.selectedAddress;
+            return currentAddress?.toLowerCase();
+        } catch (err) {
+            console.log(err);
+        }
     } else {
-        throw new Error('Hubo un problema con MetaMask');
+        console.log('Hubo un problema con MetaMask');
     }
-    return currentAddress?.toLowerCase();
 }
 
 export async function donarCrypto(monto) {

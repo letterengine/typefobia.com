@@ -2,8 +2,17 @@
     width: 100%;
     padding: 2rem 2rem 3rem 2rem;
     display: flex;
+    max-width: 800px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: var(--bg);
-    background-color: var(--text);
+}
+
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icons svg {
+    width: 1.5rem;
 }

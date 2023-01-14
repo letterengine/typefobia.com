@@ -5,6 +5,14 @@ import MainContainer from '@components/Containers/MainContainer';
 import Section from '@components/Containers/Section';
 import Container from '@components/Containers/Container';
 import Highlight from '@components/Layout/Highlight';
+import SubNav from '@components/UI/SubNav';
+
+const subNavItems = [
+    { href: '#precios', label: 'Precios' },
+    { href: '#inscripcion', label: 'Inscripción' },
+    { href: '#fecha', label: 'Fecha' },
+    { href: '#locacion', label: 'Locación' },
+];
 
 export default function Home() {
     return (
@@ -22,19 +30,20 @@ export default function Home() {
                 <Highlight contenido={contenido.highlight} />
             </MainContainer>
             <Section id='info'>
-                <Container>
+                <SubNav id='subnav-home' links={subNavItems} />
+                <Container id='precios'>
                     <h3>Precios</h3>
                     <Highlight contenido={contenido.precios} />
                 </Container>
-                <Container>
+                <Container id='inscripcion'>
                     <h3>Inscripción</h3>
                     <Highlight contenido={contenido.inscripcion} />
                 </Container>
-                <Container>
+                <Container id='fecha'>
                     <h3>Fecha</h3>
-                    {contenido.fecha}
+                    <Highlight contenido={contenido.fecha} />
                 </Container>
-                <Container>
+                <Container id='locacion'>
                     <h3>Locación</h3>
                     <h4>Musa Cultura Visual</h4>
                     <iframe

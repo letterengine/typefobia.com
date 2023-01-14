@@ -16,13 +16,13 @@ body {
     color: var(--text);
     background-color: var(--bg);
     background: linear-gradient(
-        90deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 255, 0, 1) 20%,
-        rgba(0, 255, 0, 1) 40%,
-        rgba(0, 255, 255, 1) 60%,
-        rgba(0, 0, 255, 1) 80%,
-        rgba(255, 0, 255, 1) 100%
+        rgba(255, 0, 127, 1) 0%,
+        rgba(255, 127, 0, 1) 20%,
+        rgba(127, 255, 0, 1) 40%,
+        rgba(0, 255, 127, 1) 60%,
+        rgba(0, 127, 255, 1) 85%,
+        rgba(0, 0, 255, 1) 95%,
+        rgba(0, 0, 0, 1) 100%
     );
     font-family: 'Comic Neue', sans-serif;
 }
@@ -39,31 +39,30 @@ h4,
 h5,
 h6 {
     font-family: Tomasa;
-    overflow-x: scroll;
 }
 h1 {
-    font-size: 3rem;
-    line-height: 3.75rem;
+    font-size: 4.5rem;
+    line-height: 4.75rem;
 }
 h2 {
-    font-size: 2.75rem;
-    line-height: 3.25rem;
+    font-size: 4rem;
+    line-height: 4.25rem;
 }
 h3 {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-size: 3.5rem;
+    line-height: 3.75rem;
 }
 h4 {
-    font-size: 2rem;
-    line-height: 2.25rem;
+    font-size: 3rem;
+    line-height: 3.25rem;
 }
 h5 {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
+    font-size: 2.5rem;
+    line-height: 2.75rem;
 }
 h6 {
-    font-size: 1rem;
-    line-height: 1.25rem;
+    font-size: 2rem;
+    line-height: 2.25rem;
 }
 
 em {
@@ -76,7 +75,7 @@ strong {
 
 a {
     color: var(--text);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 ul {
@@ -95,6 +94,14 @@ code {
     text-align: left;
 }
 
+input * {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
 .code-block {
     background-color: var(--bg);
     display: flex;
@@ -105,6 +112,33 @@ code {
 
 @media (hover) {
     a:hover {
-        font-weight: 700;
+        transform: scale(1.05);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 2.75rem;
+        line-height: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+    }
+    h3 {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+    h4 {
+        font-size: 2rem;
+        line-height: 2.25rem;
+    }
+    h5 {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+    h6 {
+        font-size: 1rem;
+        line-height: 1.25rem;
     }
 }

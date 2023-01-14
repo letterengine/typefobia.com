@@ -48,8 +48,8 @@ export default function Navbar() {
                 <Image
                     src={Logo}
                     alt='Typefobia Logo'
-                    width={100}
-                    height={100}
+                    width={150}
+                    height={150}
                 />
                 {smallMenu ? (
                     <h3

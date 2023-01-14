@@ -23,7 +23,10 @@ const indexContent = {
     ),
     precios: (
         <>
-            <p>Chelas y Tipos e inauguración de la AntiExpo: Entrada libre</p>
+            <p>
+                Chelas y Tipos e inauguración de la AntiExpo:{' '}
+                <strong>Entrada libre</strong>
+            </p>
             <div className={hClasses.precios}>
                 <h4>Básicos</h4>
                 <ul>
@@ -65,7 +68,7 @@ const indexContent = {
         <>
             <h4>
                 <a href='https://forms.gle/TjwjJwcB1bYtcyqSA' target='blank'>
-                    Formulario de inscripción
+                    Formulario de inscripción (Clic aquí)
                 </a>
             </h4>
             <p>
@@ -93,9 +96,7 @@ const indexContent = {
         </>
     ),
     fecha: (
-        <p style={{ fontSize: '1.5rem', fontWeight: 700 }}>
-            La fecha estimada para el evento es el 4 y 5 de febrero del 2023.
-        </p>
+        <p>La fecha estimada para el evento es el 4 y 5 de febrero del 2023.</p>
     ),
     musaMap: {
         src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4847572484755!2d-98.1928851!3d19.0424128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0dd11a2c8a5%3A0x7fcf0493a0d8b004!2sMUSA%20Cultura%20Visual!5e0!3m2!1ses-419!2smx!4v1673241713008!5m2!1ses-419!2smx',

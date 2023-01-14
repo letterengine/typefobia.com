@@ -35,6 +35,11 @@
     color: aqua;
 }
 
+.taller h5 {
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg);
+}
+
 @keyframes aparecer {
     from {
         opacity: 0;

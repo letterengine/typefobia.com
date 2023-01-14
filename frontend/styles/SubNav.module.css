@@ -4,10 +4,14 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .sub-nav a {
     color: var(--bg);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
     text-decoration: none;
     padding: 1rem;
     font-size: 1.25rem;
@@ -15,6 +19,14 @@
     background-color: var(--text);
     border: 2px solid var(--text);
     transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rem 0.25rem;
+}
+
+.sub-nav a:active {
+    box-shadow: 0rem 0rem;
 }
 
 @media (hover) {
@@ -25,7 +37,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    .sub-nav {
-        flex-direction: column;
+    .sub-nav a {
+        font-size: 1rem;
     }
 }

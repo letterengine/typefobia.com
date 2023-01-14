@@ -1,21 +1,23 @@
 import contenido from '@content/actividadesContent';
-import classes from '@styles/SubNav.module.css';
 // Components
 import MainContainer from '@components/Containers/MainContainer';
 import Section from '@components/Containers/Section';
 import Container from '@components/Containers/Container';
 import Highlight from '@components/Layout/Highlight';
+import SubNav from '@components/UI/SubNav';
 
-export default function Talleres() {
+const subNavItems = [
+    { href: '#mesa-redonda', label: 'Mesa Redonda' },
+    { href: '#anti-exposicion', label: 'Anti Exposición' },
+    { href: '#suck-my-type', label: 'SuCK my TYpe' },
+];
+
+export default function Actividades() {
     return (
         <>
             <MainContainer>
                 <h1>Actividades</h1>
-                <div className={classes['sub-nav']}>
-                    <a href='#mesa-redonda'>Mesa Redonda</a>
-                    <a href='#anti-exposicion'>Anti Exposición</a>
-                    <a href='#suck-my-type'>SuckMyType</a>
-                </div>
+                <SubNav id='subnav-actividades' links={subNavItems} />
             </MainContainer>
             <Section id='actividades'>
                 <Container>
