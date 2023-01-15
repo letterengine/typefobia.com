@@ -50,8 +50,8 @@ const actividadesContent = {
             </p>
             <p>
                 Existen 9 Anti Categorías para participar; deberás mandar tu
-                proyecto a las curadoras de la Anti Exposición con los
-                siguientes datos:
+                proyecto a las curadoras de la Anti Exposición al correo
+                hola@typefobia.com con los siguientes datos:
             </p>
             <ul>
                 <li>Nombre del proyecto</li>
