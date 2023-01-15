@@ -58,6 +58,7 @@ const actividadesContent = {
                 <li>Nombre de la categoría que deseas participar</li>
                 <li>Nombre completo</li>
                 <li>Una pequeña descripción</li>
+                <li>Envía la pasarela (espécimen) de tus letras en formato .pdf al correo</li>
             </ul>
             <p>
                 Los proyectos seleccionados serán expuestos los días 04, 05 y 06
