@@ -10,7 +10,6 @@ import SubNav from '@components/UI/SubNav';
 const subNavItems = [
     { href: '#precios', label: 'Precios' },
     { href: '#inscripcion', label: 'Inscripción' },
-    { href: '#fecha', label: 'Fecha' },
     { href: '#locacion', label: 'Locación' },
 ];
 
@@ -27,6 +26,7 @@ export default function Home() {
             </Head>
             <MainContainer>
                 <h1>Typefobia</h1>
+                <Highlight contenido={contenido.fecha} />
                 <Highlight contenido={contenido.highlight} />
             </MainContainer>
             <Section id='info'>
@@ -38,10 +38,6 @@ export default function Home() {
                 <Container id='inscripcion'>
                     <h3>Inscripción</h3>
                     <Highlight contenido={contenido.inscripcion} />
-                </Container>
-                <Container id='fecha'>
-                    <h3>Fecha</h3>
-                    <Highlight contenido={contenido.fecha} />
                 </Container>
                 <Container id='locacion'>
                     <h3>Locación</h3>

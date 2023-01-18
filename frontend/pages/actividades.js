@@ -48,7 +48,7 @@ export default function Actividades() {
             );
         },
         handleSubnavClick = e => {
-            window.location = `${document.location.pathname}#`;
+            e.preventDefault();
             const anchor = e.target.href,
                 selected = anchor.replace(/https?:\/\/[^#]+#/, '');
             setCurrentHash(selected);

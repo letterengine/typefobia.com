@@ -35,7 +35,7 @@ export default function Talleres() {
     const [sel, setSel] = useState(talleres.virtuales),
         [subNav, setSubnav] = useState([...subNavItems]),
         handleSubnavClick = e => {
-            window.location = `${document.location.pathname}#`;
+            e.preventDefault()
             const anchor = e.target.href,
                 selected = anchor.replace(/https?:\/\/[^#]+#/, '');
             setSel(talleres[selected]);

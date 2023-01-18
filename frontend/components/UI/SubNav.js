@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import classes from '@styles/SubNav.module.css';
 
 export default function SubNav({ id, links, onClick }) {
@@ -10,9 +9,9 @@ export default function SubNav({ id, links, onClick }) {
                     key={`${id}-${i}`}
                     onClick={onClick}
                 >
-                    <Link href={link.href} legacyBehavior>
+                    <a href={link.href} legacyBehavior>
                         {link.label}
-                    </Link>
+                    </a>
                 </div>
             ))}
         </div>
