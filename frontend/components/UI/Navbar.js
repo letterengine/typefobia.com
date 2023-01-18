@@ -83,7 +83,7 @@ export default function Navbar() {
                 </div>
             </div>
             <div className={classes.modals}>
-                <Button onClick={handleClick}>Registro</Button>
+                <Button onClick={handleClick}>Newsletter</Button>
                 <Button onClick={handleClick}>Donar</Button>
             </div>
         </nav>

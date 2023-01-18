@@ -15,10 +15,6 @@ const indexContent = {
                 divergente, es por esto que el anti congreso se desmitifica a
                 través de distintas actividades la palabra tipografía.
             </p>
-            <p>
-                Evento de entrada con cooperación sugerida a partir de $150 o 10
-                MATIC (no incluye consumo).
-            </p>
         </>
     ),
     precios: (
