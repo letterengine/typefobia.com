@@ -9,7 +9,7 @@ export default function ModalConstructor() {
     switch (modalctx.currentModal) {
         case 'Donar':
             return <Donar />;
-        case 'Registro':
+        case 'Newsletter':
             return <MailChimp />;
         default:
             return null;
