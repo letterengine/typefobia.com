@@ -56,7 +56,9 @@ const indexContent = {
                 </ul>
             </div>
             <p>
-                <em>Precios no incluyen consumo en Musa</em>
+                <em>
+                    Precios en peso mexicano (MXN), no incluyen consumo en Musa
+                </em>
             </p>
         </>
     ),
