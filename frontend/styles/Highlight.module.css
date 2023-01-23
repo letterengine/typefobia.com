@@ -53,7 +53,7 @@
 }
 
 .highlight a {
-    color: rgb(255, 53, 124);
+    color: var(--pink);
 }
 
 .precios {

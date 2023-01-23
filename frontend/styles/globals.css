@@ -1,6 +1,7 @@
 :root {
     --bg: yellow;
     --text: black;
+    --pink: rgb(255, 53, 124)
 }
 
 * {

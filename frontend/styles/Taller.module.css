@@ -23,7 +23,7 @@
 }
 
 .taller a {
-    color: magenta;
+    color: var(--pink);
 }
 
 .taller h1,
