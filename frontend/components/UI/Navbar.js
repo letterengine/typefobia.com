@@ -8,11 +8,13 @@ import classes from '@styles/Navbar.module.css';
 import Button from '@components/UI/Button';
 
 const menu = [
-    { text: 'Home', url: '/' },
-    { text: 'Charlas', url: '/charlas' },
-    { text: 'Talleres', url: '/talleres' },
-    { text: 'Actividades', url: '/actividades' },
-];
+        { text: 'Home', url: '/' },
+        { text: 'Programa', url: '/programa' },
+        { text: 'Invitadxs', url: '/invitadxs' },
+        { text: 'Talleres', url: '/talleres' },
+        { text: 'Actividades', url: '/actividades' },
+    ],
+    menuBreakpoint = 800;
 
 export default function Navbar() {
     const router = useRouter(),
@@ -28,15 +30,15 @@ export default function Navbar() {
         };
 
     useEffect(() => {
-        setSmallMenu(window.innerWidth <= 800);
-        setMenuOn(window.innerWidth > 800);
+        setSmallMenu(window.innerWidth <= menuBreakpoint);
+        setMenuOn(window.innerWidth > menuBreakpoint);
     }, []);
 
     useEffect(() => {
         const windowWidthUpdate = () => {
             const newWidth = window.innerWidth;
-            setSmallMenu(newWidth <= 800);
-            setMenuOn(newWidth > 800);
+            setSmallMenu(newWidth <= menuBreakpoint);
+            setMenuOn(newWidth > menuBreakpoint);
         };
         window.addEventListener('resize', windowWidthUpdate);
         return () => window.removeEventListener('resize', windowWidthUpdate);

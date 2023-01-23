@@ -65,8 +65,9 @@ const indexContent = {
     inscripcion: (
         <>
             <h4>
+                Formulario de inscripción{' '}
                 <a href='https://forms.gle/TjwjJwcB1bYtcyqSA' target='blank'>
-                    Formulario de inscripción (Clic aquí)
+                    (Clic aquí)
                 </a>
             </h4>
             <p>

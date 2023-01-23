@@ -41,7 +41,7 @@ export default function Home() {
                 </Container>
                 <Container id='locacion'>
                     <h3>Locación</h3>
-                    <h4>Musa Cultura Visual</h4>
+                    <Highlight contenido={[<h4>Musa Cultura Visual</h4>]} />
                     <iframe
                         style={{ border: 0, boxShadow: '1rem 1rem' }}
                         {...contenido.musaMap}

@@ -9,9 +9,7 @@ export default function SubNav({ id, links, onClick }) {
                     key={`${id}-${i}`}
                     onClick={onClick}
                 >
-                    <a href={link.href} legacyBehavior>
-                        {link.label}
-                    </a>
+                    <a href={link.href}>{link.label}</a>
                 </div>
             ))}
         </div>

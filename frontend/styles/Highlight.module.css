@@ -52,6 +52,10 @@
     font-weight: bold;
 }
 
+.highlight a {
+    color: rgb(255, 53, 124);
+}
+
 .precios {
     padding: 3rem;
     display: flex;
