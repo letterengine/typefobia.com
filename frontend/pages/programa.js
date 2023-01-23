@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { programaContent } from '@content/programaContent';
+import { programHeader, programaContent } from '@content/programaContent';
 import MainContainer from '@components/Containers/MainContainer';
 import SubNav from '@components/UI/SubNav';
 import Section from '@components/Containers/Section';
-import Row from '@components/UI/Row';
+import Rows from '@components/UI/Rows';
 import classes from '@styles/ProgramaBody.module.css';
 import Container from '@components/Containers/Container';
 
@@ -42,8 +42,8 @@ export default function Programa() {
                     <div className={classes['table-wrapper']}>
                         <table className={classes.table}>
                             <thead className={classes.header}>
-                                <tr className={classes.row}>
-                                    {programaContent.header.map((el, i) => (
+                                <tr>
+                                    {programHeader.map((el, i) => (
                                         <th
                                             className={classes['header-col']}
                                             key={`th-${i}`}
@@ -53,11 +53,7 @@ export default function Programa() {
                                     ))}
                                 </tr>
                             </thead>
-                            <tbody className={classes.body}>
-                                {sel.map(row => (
-                                    <Row row={row} />
-                                ))}
-                            </tbody>
+                            <Rows rows={sel} />
                         </table>
                     </div>
                 </Container>
