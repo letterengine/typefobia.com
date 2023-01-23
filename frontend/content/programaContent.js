@@ -1,5 +1,5 @@
 export const programaContent = {
-    header: ['Hora', 'Actividades Virtuales', 'Actividades presenciales'],
+    header: ['Hora', 'Actividades virtuales', 'Actividades presenciales'],
     sabado: [
         { hora: '9:30', virtual: 'Bienvenida al evento', presencial: '' },
         { hora: '10:00', virtual: 'Rebeca Anaya', presencial: '' },
